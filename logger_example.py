@@ -7,7 +7,7 @@ def hello_world():
     app.logger.debug('A value for debugging')
     app.logger.warning('A warning occured (%d apples)', 42)
     app.logger.error('An error occurred')
-    
+
     return 'Hello, World'
 
 if __name__ == '__main__':
