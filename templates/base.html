@@ -2,8 +2,12 @@
 <html>
 <head>
     <title></title>
+    {% block libraries %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}" media="Screen" type="text/css" />
+    {% endblock %}
 </head>
 <body>
-
+    {% block content %}
+    {% endblock %}
 </body>
 </html>
