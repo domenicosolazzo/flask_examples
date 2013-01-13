@@ -2,6 +2,10 @@ from flask import Flask, session, redirect, url_for, escape, request
 
 app = Flask(__name__)
 
+def generate_good_secret_key():
+    import os
+    return os.urandom(24)
+
 @app.route('/')
 def index():
     if 'username' in session:
@@ -25,7 +29,7 @@ def logout():
     session.pop('username', None)
     return redirect(url_for('index'))
 
-app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
+app.secret_key = generate_good_secret_key()
 
 if __name__ == '__main__':
     app.debug = True
